@@ -8,6 +8,9 @@ public class RoomManager {
 	private ArrayList<Room> doubleRoomList = new ArrayList<Room>();
 	
 	
+
+	
+	
 	public void addNewRoom(String[] roomInfo) {
 		Room newRoom = new Room(roomInfo);
 		if(newRoom.isDouble() == false) {

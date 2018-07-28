@@ -20,10 +20,7 @@ public class HotelBookingSystem {
 	        	  String[] newInfoLine = sc.nextLine().split(" ");
 	        	 
 	        	  if(newInfoLine[0].equals("Hotel")){
-	        		  rm.addNewRoom(newInfoLine);
-	        		  
-	        		  
-	        		  
+	        		  rm.addNewRoom(newInfoLine);	  
 	        	  }
 	        	  
 	        	  if(newInfoLine[0].equals("Booking")) {
