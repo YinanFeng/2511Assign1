@@ -11,20 +11,17 @@ public class Booking {
 	private ArrayList<specRoomOrder> orderList = new ArrayList<specRoomOrder>();
 	
 	
-	public Booking(String[] bookingInfo) {
-		this.bookingStatus = bookingInfo[0];
-		this.name = bookingInfo[1];
-		
-		infoProcessor newPro = new infoProcessor();
-		this.startDate = newPro.convertStartDate(bookingInfo);
-
-	    this.duration = Integer.parseInt(bookingInfo[4]);
+	public Booking(String status,String bookerName,Calendar startDate,int duration,String[] orders) {
+		this.bookingStatus = status;
+		this.name = bookerName;
+		this.startDate = startDate;
+	    this.duration = duration;
 	    
-	    int orderNum = (bookingInfo.length-5)/2;
-	    int index = 5;
+	    int orderNum = orders.length/2;
+	    int index = 0;
 	    for(int i=1;i<=orderNum;i++) {
-	    	int nor = Integer.parseInt(bookingInfo[index+1]);
-	    	specRoomOrder OneOrder = new specRoomOrder(bookingInfo[index],nor);
+	    	int nor = Integer.parseInt(orders[index+1]);
+	    	specRoomOrder OneOrder = new specRoomOrder(orders[index],nor);
 	    	index = index+2;
 	    	this.orderList.add(OneOrder);
 	    }
@@ -80,7 +77,9 @@ public class Booking {
 		this.orderList = orderList;
 	}
 	
-
+	public int totalOrderNumber() {
+		return this.orderList.size();
+	}
 	
 	
 }

@@ -46,8 +46,12 @@ public class Room {
 		return this.canBook[Month][Day];
 	}
 
-	public void setCanBook(int Month,int Day,boolean canBook) {
-		this.canBook[Month][Day] = canBook;
+	public void cancelBooking(int Month,int Day) {
+		this.canBook[Month][Day] = false;
+	}
+	
+	public void bookTheRoom(int Month,int Day) {
+		this.canBook[Month][Day] = false;
 	}
 	
 	public boolean isDouble() {

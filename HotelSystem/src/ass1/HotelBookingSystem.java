@@ -13,22 +13,27 @@ public class HotelBookingSystem {
 	          sc = new Scanner(new File(args[0]));    // args[0] is the first command line argument
 	          // Read input from the scanner here
 	          BookingManager bm = new BookingManager();
-	          RoomManager rm = new RoomManager();
-	        
-	          
+ 
 	          while(sc.hasNext()) {
 	        	  String[] newInfoLine = sc.nextLine().split(" ");
 	        	 
 	        	  if(newInfoLine[0].equals("Hotel")){
-	        		  rm.addNewRoom(newInfoLine);	  
+	        		  bm.addNewRoom(newInfoLine);	  
 	        	  }
 	        	  
 	        	  if(newInfoLine[0].equals("Booking")) {
-	        		  bm.addNewBooking(newInfoLine);  
+	        		  Boolean successBooking = bm.addNewBooking(newInfoLine);  
+	        		  if(successBooking == true) {
+	        			  
+	        		  }else{
+	        			  
+	        		  }
+	        		  
+	        		  
 	        	  }
 	        	  
 	        	  if(newInfoLine[0] == "Cancel") {
-	        		  
+	        		  bm.cancelBooking(newInfoLine);
 	        	  }
 	        	  
 	        	  if(newInfoLine[0] == "Change") {
