@@ -37,6 +37,16 @@ public class HotelBookingSystem {
 	        	  }
 	        	  
 	        	  if(newInfoLine[0] == "Change") {
+	        		  Boolean successChanging = bm.changeBooking(newInfoLine);
+	        		  if(successChanging == true) {
+	        			  
+	        		  }else {
+	        			  
+	        		  }
+	        		  
+	        	  }
+	        	  
+	        	  if(newInfoLine[0] == "Print") {
 	        		  
 	        	  }
 	        	  

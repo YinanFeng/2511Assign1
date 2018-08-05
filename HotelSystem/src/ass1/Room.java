@@ -6,19 +6,21 @@ public class Room {
 	private int capacity;
 	private String booker;
 	private boolean[][] canBook;
+	private int[] bookingInfo;
 
 	public Room(String[] roomInfo) {
 		this.hotelName = roomInfo[1];
 		this.roomNumber = Integer.parseInt(roomInfo[2]);
 		this.capacity = Integer.parseInt(roomInfo[3]);
 		this.canBook = new boolean[13][32];
+	//	this.bookingInfo = "";
 		for(int i=1;i<=12;i++) {
 			for(int j=1;j<=31;j++) {
 				this.canBook[i][j] = true;
 			}
 		}
 	}
-
+	
 	public String getHotelName() {
 		return this.hotelName;
 	}
@@ -55,13 +57,17 @@ public class Room {
 		this.canBook[Month][Day] = false;
 	}
 	
-	public boolean isDouble() {
-		if(this.capacity == 1) {
-			return false;
-		}
-		return true;
-	}
+/*
 	
+	public void addBookInfo() {
+		this.bookingInfo =;
+	}
+
+	
+	public String[] getAddBookInfo() {
+		return this.bookingInfo;
+	}
+	*/
 	
 	
 }

@@ -19,11 +19,6 @@ public class infoProcessor {
 		//end.add(GregorianCalendar.DAY_OF_MONTH, 5);
 		
 	}
-	
-	
-	
-	
-	
 	public int switchMonth(String monthS) {
 		int monthN = 0;
 		switch(monthS) {

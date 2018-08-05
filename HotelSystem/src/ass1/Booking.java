@@ -9,6 +9,8 @@ public class Booking {
 	private Calendar startDate;
 	private int duration;
 	private ArrayList<specRoomOrder> orderList = new ArrayList<specRoomOrder>();
+	private String hotelName;
+	private ArrayList<Integer> roomOrdered;
 	
 	
 	public Booking(String status,String bookerName,Calendar startDate,int duration,String[] orders) {
@@ -16,15 +18,37 @@ public class Booking {
 		this.name = bookerName;
 		this.startDate = startDate;
 	    this.duration = duration;
+	    this.hotelName = "";
+	    this.roomOrdered = new ArrayList<Integer>();
 	    
 	    int orderNum = orders.length/2;
 	    int index = 0;
 	    for(int i=1;i<=orderNum;i++) {
 	    	int nor = Integer.parseInt(orders[index+1]);
-	    	specRoomOrder OneOrder = new specRoomOrder(orders[index],nor);
+	    	specRoomOrder OneOrder = new specRoomOrder(Integer.parseInt(orders[index]),nor);
 	    	index = index+2;
 	    	this.orderList.add(OneOrder);
 	    }
+	}
+
+
+	public String getHotelName() {
+		return hotelName;
+	}
+
+
+	public void setHotelName(String hotelName) {
+		this.hotelName = hotelName;
+	}
+
+
+	public ArrayList<Integer> getRoomOrdered() {
+		return roomOrdered;
+	}
+
+
+	public void setRoomOrdered(ArrayList<Integer> roomOrdered) {
+		this.roomOrdered = roomOrdered;
 	}
 
 
