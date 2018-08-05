@@ -4,6 +4,7 @@ public class Room {
 	private String hotelName;
 	private int roomNumber;
 	private int capacity;
+	private String booker;
 	private boolean[][] canBook;
 
 	public Room(String[] roomInfo) {
@@ -60,6 +61,7 @@ public class Room {
 		}
 		return true;
 	}
+	
 	
 	
 }

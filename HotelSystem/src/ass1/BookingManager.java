@@ -62,10 +62,12 @@ public class BookingManager {
 		//check if it is a valid booking.
 		if(orderRoomList == null) {
 			//booking rejected.
+			newBooking.setBookingStatus("Booking rejected");
+			bookingList.add(newBooking);
 			return false;
 		}else{
 			bookingList.add(newBooking);
-			bookSpecRoom(orderRoomList,newBooking.getStartDate(),newBooking.getDuration());
+			bm.bookSpecRoom(orderRoomList,newBooking);
 		}
 		
 		return true;
@@ -74,28 +76,45 @@ public class BookingManager {
 	
 	public void cancelBooking(String[] cancelInfo) {
 		Booking booking= findBookingByBooker(cancelInfo[1]);
-		
-		
-		bookSpecRoom(orderRoomList,booking.getStartDate(),booking.getDuration());
-		
-		this.bookingList.remove(booking);
-		
+		BookingManager bm = new BookingManager();
+		bm.cancelSpecRoom(booking);
+		booking.setBookingStatus("Cancel");
 		
 	}
 	
+	public void changeBooking(String[] changeInfo) {
+		BookingManager bm = new BookingManager();
+		Booking booking = findBookingByBooker(changeInfo[1]);
+		
+		bm.cancelSpecRoom(booking);
+		booking.setBookingStatus("CancelByChange");
+		
+		boolean changeSuccess = bm.addNewBooking(changeInfo);
+		
+		if(changeSuccess == true) {
+			
+		}else {
+			this.bookingList.remove(bm.findBookingByBooker(changeInfo[1]));
+			
+			bm.reorderSpecRoom(booking);
+			booking.setBookingStatus("Booking");
+		}
+
+	}
+
 	public ArrayList<Room> availableBookingNum(String type, Calendar specDate,int duration) {
 		ArrayList<Room> allAvailable = new ArrayList<Room>();
 		if(type.equals("single")) {
 			for(Room room:singleRoomList) {
 				int isavailable = 1;
-				for(int j=1;j<duration;j++) {
+				for(int j=1;j<=duration;j++) {
 					if(room.getCanBook(specDate.MONTH,specDate.DAY_OF_MONTH) == true) {
 					}else {
 						isavailable = 0;
 					}
 					specDate.add(Calendar.DATE,1);
 				}
-				specDate.add(Calendar.DATE,(-1)*(duration-1));
+				specDate.add(Calendar.DATE,(-1)*duration);
 				if(isavailable == 1) {
 					allAvailable.add(room);
 				}
@@ -104,14 +123,14 @@ public class BookingManager {
 		}else{
 			for(Room room:doubleRoomList) {
 				int isavailable = 1;
-				for(int j=1;j<duration;j++) {
+				for(int j=1;j<=duration;j++) {
 					if(room.getCanBook(specDate.MONTH,specDate.DAY_OF_MONTH) == true){
 					}else {
 						isavailable = 0;
 					}
 					specDate.add(Calendar.DATE,1);
 				}
-				specDate.add(Calendar.DATE,(-1)*(duration-1));
+				specDate.add(Calendar.DATE,(-1)*duration);
 				if(isavailable == 1) {
 					allAvailable.add(room);
 				}
@@ -122,19 +141,91 @@ public class BookingManager {
 
 	
 	
-	public void bookSpecRoom(ArrayList<Room> roomList,Calendar specDate,int duration) {
+	public void bookSpecRoom(ArrayList<Room> roomList,Booking newBooking) {
+		Calendar specDate = newBooking.getStartDate();
+		int duration = newBooking.getDuration();
+		
+		int k = 0;
+		int m = 0;
+		
 		for(Room room:roomList) {
-			for(int j=1;j<duration;j++) {
+			if(k == newBooking.getOrderList().get(m).getNor()) {
+				m++;
+				k=0;
+			}
+			
+			for(int j=1;j<=duration;j++) {
 				room.bookTheRoom(specDate.MONTH,specDate.DAY_OF_MONTH);
 				specDate.add(Calendar.DATE,1);
 			}
-			specDate.add(Calendar.DATE,(-1)*(duration-1));
+			newBooking.getOrderList().get(m).setHotelName(room.getHotelName(),k);
+			newBooking.getOrderList().get(m).setRoomNumber(room.getRoomNumber(),k);
+			k++;
+			specDate.add(Calendar.DATE,(-1)*duration);
 		}	
 	}
 	
+	public Room findRoomByHotelAndNumber(String hotelName,int num,String roomType) {
+		if(roomType.equals("single")) {
+			for(Room room : this.singleRoomList) {
+				if(room.getHotelName().equals(hotelName) && (room.getRoomNumber() == num)) {
+					return room;
+				}
+			}	
+		}
+		if(roomType.equals("double")) {
+			for(Room room : this.doubleRoomList) {
+				if(room.getHotelName().equals(hotelName) && (room.getRoomNumber() == num)) {
+					return room;
+				}
+			}	
+		}
+		
+		return null;
+		
+	}
+	
+	
+	public void cancelSpecRoom(Booking newBooking) {
+		Calendar specDate = newBooking.getStartDate();
+		int duration = newBooking.getDuration();
+		
+		for(int i=0;i<newBooking.totalOrderNumber();i++) {
+			String[] hotelName = newBooking.getOrderList().get(i).getHotelName();
+			int[] roomNumber = newBooking.getOrderList().get(i).getRoomNumber();
+			for(int j=0;j<newBooking.getOrderList().get(i).getNor();j++) {
+				Room room = findRoomByHotelAndNumber(hotelName[j],roomNumber[j],newBooking.getOrderList().get(i).getRoomType());
+				for(int m=1;m<=duration;m++) {
+					room.cancelBooking(specDate.MONTH,specDate.DAY_OF_MONTH);
+					specDate.add(Calendar.DATE,1);
+				}
+				specDate.add(Calendar.DATE,(-1)*duration);
+			}
+		}
+	}
+	
+	public void reorderSpecRoom(Booking newBooking) {
+		Calendar specDate = newBooking.getStartDate();
+		int duration = newBooking.getDuration();
+		
+		for(int i=0;i<newBooking.totalOrderNumber();i++) {
+			String[] hotelName = newBooking.getOrderList().get(i).getHotelName();
+			int[] roomNumber = newBooking.getOrderList().get(i).getRoomNumber();
+			for(int j=0;j<newBooking.getOrderList().get(i).getNor();j++) {
+				Room room = findRoomByHotelAndNumber(hotelName[j],roomNumber[j],newBooking.getOrderList().get(i).getRoomType());
+				for(int m=1;m<=duration;m++) {
+					room.bookTheRoom(specDate.MONTH,specDate.DAY_OF_MONTH);
+					specDate.add(Calendar.DATE,1);
+				}
+				specDate.add(Calendar.DATE,(-1)*duration);
+			}
+		}		
+	}
+	
+
 	public Booking findBookingByBooker(String bookerName) {
 		for(Booking booking:bookingList) {
-			if(booking.getName() == bookerName) {
+			if(booking.getName() == bookerName && (booking.getBookingStatus().equals("Booking")||booking.getBookingStatus().equals("Change"))) {
 				return booking;
 			}
 		}
