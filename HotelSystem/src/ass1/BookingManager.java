@@ -47,7 +47,6 @@ public class BookingManager {
 
 		
 		Booking newBooking = new Booking(bookingInfo[0],bookingInfo[1],startDate,duration,orders);
-	//	BookingManager bm = new BookingManager();
 		Hotel availableHotel = this.checkRoomAvailable(newBooking);
 		//reject the booking if there is no available room.
  		if(availableHotel == null) {
@@ -58,7 +57,7 @@ public class BookingManager {
  		//set hotel name for order.
  		newBooking.setHotelName(availableHotel.getName());
  		//booking is success, them booking the room and record the room number booked.
- 		ArrayList<Integer> roomList = this.bookAllRoom(availableHotel,newBooking);
+ 		ArrayList<Integer> roomList = availableHotel.bookAllRoom(newBooking);
  		newBooking.setRoomOrdered(roomList);
  		bookingList.add(newBooking);
 		
@@ -94,7 +93,7 @@ public class BookingManager {
 		}
 		return availableHotel;	
 	}
-	
+	/*
 	public ArrayList<Integer> bookAllRoom(Hotel hotel,Booking booking) {
 		ArrayList<Integer> roomList = new ArrayList<Integer>();
 		for(int i=0;i<booking.totalOrderNumber();i++) {	
@@ -105,7 +104,7 @@ public class BookingManager {
 		}
 		return roomList;
 	}
-	
+	*/
 	public String cancelBooking(String[] cancelInfo) {
 		Booking booking= findBookingByBooker(cancelInfo[1]);
 		if(booking == null) {

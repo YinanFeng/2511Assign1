@@ -11,7 +11,9 @@ public class Room {
 	private int capacity;
 	private boolean[][] canBook;
 	private ArrayList<bookingInfo> bookingInfoList;
-
+	
+	private static int countRoom = 1;
+	private int theIndex;
 
 	public Room(String[] roomInfo) {
 		this.hotelName = roomInfo[1];
@@ -24,8 +26,14 @@ public class Room {
 			}
 		}
 		this.bookingInfoList = new ArrayList<bookingInfo>();
+		this.theIndex = countRoom;
+		countRoom++;
 	}
 	
+	public int getTheIndex() {
+		return theIndex;
+	}
+
 	public ArrayList<bookingInfo> addBookingInfo(Calendar startDate,int duration) {
 		bookingInfo bi= new bookingInfo(startDate,duration);
 		this.bookingInfoList.add(bi);

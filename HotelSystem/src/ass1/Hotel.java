@@ -2,6 +2,8 @@ package ass1;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Hotel {
 	private String name;
@@ -38,6 +40,7 @@ public class Hotel {
 
 		if(newRoom.getCapacity() == 1) {
 			this.singleRoomList.add(newRoom);
+		
 		}
 		if(newRoom.getCapacity() == 2) {
 			this.doubleRoomList.add(newRoom);
@@ -46,6 +49,7 @@ public class Hotel {
 			this.tripleRoomList.add(newRoom);
 		}
 		this.allRoomList.add(newRoom);
+		
 	}
 	
 	public int availableSpecTypeRoom(Calendar specDate,int duration,int type) {
@@ -80,9 +84,9 @@ public class Hotel {
 		return num;
 	}
 	
-	public ArrayList<Integer> bookRoom(ArrayList<Integer> roomList,Calendar specDate,int duration,int type, int num) {
+	public ArrayList<Room> bookRoom(ArrayList<Integer> roomList,Calendar specDate,int duration,int type, int num) {
 		ArrayList<Room> typeRoomList = null;
-		ArrayList<Integer> roomBookedList = new ArrayList<Integer>();
+		ArrayList<Room> roomBookedList = new ArrayList<Room>();
 		if(type == 1) {
 			typeRoomList = this.singleRoomList;
 		}
@@ -104,7 +108,7 @@ public class Hotel {
 			}
 			specDate.add(Calendar.DATE,(-1)*duration);
 			if(isavailable == 1) {
-				roomBookedList.add(room.getRoomNumber());
+				roomBookedList.add(room);
 				for(int j=1;j<=duration;j++) {
 					room.bookTheRoom(specDate.MONTH,specDate.DAY_OF_MONTH);
 					specDate.add(Calendar.DATE,1);
@@ -173,5 +177,36 @@ public class Hotel {
 		String res = new String(sb);
         return res;
 	}
+	
+	public ArrayList<Integer> bookAllRoom(Booking booking) {
+		ArrayList<Room> roomList = new ArrayList<Room>();
+		for(int i=0;i<booking.totalOrderNumber();i++) {	
+			int roomType = booking.getOrderList().get(i).getRoomType();
+			int numRequired = booking.getOrderList().get(i).getNor();
+			//right way to use add all???
+			roomList.addAll(this.bookRoom(booking.getRoomOrdered(),booking.getStartDate(),booking.getDuration(),roomType,numRequired));
+		}
+
+		Collections.sort(roomList, new Comparator<Room>(){
+		     public int compare(Room o1, Room o2){
+		    	 if(o1.getTheIndex() == o2.getTheIndex())
+		             return 0;
+		         return o1.getTheIndex() < o2.getTheIndex() ? -1 : 1;
+		     }
+		});
+		
+		
+		
+		ArrayList<Integer> roomNumList = new ArrayList<Integer>();
+		for(Room rm:roomList) {
+			roomNumList.add(rm.getRoomNumber());
+			System.out.println(rm.getTheIndex());
+		}
+		
+		
+		
+		return roomNumList;
+	}
+	
 
 }
