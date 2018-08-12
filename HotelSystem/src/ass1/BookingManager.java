@@ -43,7 +43,9 @@ public class BookingManager {
 	public String addNewBooking(String[] bookingInfo) {
 		Calendar startDate = this.convertStartDate(bookingInfo);
 		int duration = Integer.parseInt(bookingInfo[4]);
-		String[] orders = Arrays.copyOfRange(bookingInfo, 5, bookingInfo.length-1);
+		String[] orders = Arrays.copyOfRange(bookingInfo, 5, bookingInfo.length);
+
+		
 		Booking newBooking = new Booking(bookingInfo[0],bookingInfo[1],startDate,duration,orders);
 	//	BookingManager bm = new BookingManager();
 		Hotel availableHotel = this.checkRoomAvailable(newBooking);

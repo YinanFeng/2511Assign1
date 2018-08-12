@@ -21,16 +21,38 @@ public class Booking {
 	    this.hotelName = "";
 	    this.roomOrdered = new ArrayList<Integer>();
 	    
+	    
 	    int orderNum = orders.length/2;
+	 //   System.out.println(orders.length);
+	  //  System.out.println(orders[0]);
+	 //   System.out.println(orders[3]);
+	    
 	    int index = 0;
 	    for(int i=1;i<=orderNum;i++) {
 	    	int nor = Integer.parseInt(orders[index+1]);
-	    	specRoomOrder OneOrder = new specRoomOrder(Integer.parseInt(orders[index]),nor);
+	    	int type = whichRoomType(orders[index]);
+	    	specRoomOrder OneOrder = new specRoomOrder(type,nor);
 	    	index = index+2;
 	    	this.orderList.add(OneOrder);
+	    	
+	    	
 	    }
 	}
 
+	public int whichRoomType(String type) {
+		if(type.equals("single")) {
+			return 1;
+		}
+		
+		if(type.equals("double")) {
+			return 2;
+		}
+	
+		return 3;
+	}
+	
+	
+	
 	public String getHotelName() {
 		return hotelName;
 	}
