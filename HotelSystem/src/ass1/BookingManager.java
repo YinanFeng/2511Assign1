@@ -44,8 +44,7 @@ public class BookingManager {
 		Calendar startDate = this.convertStartDate(bookingInfo);
 		int duration = Integer.parseInt(bookingInfo[4]);
 		String[] orders = Arrays.copyOfRange(bookingInfo, 5, bookingInfo.length);
-
-		
+	
 		Booking newBooking = new Booking(bookingInfo[0],bookingInfo[1],startDate,duration,orders);
 		Hotel availableHotel = this.checkRoomAvailable(newBooking);
 		//reject the booking if there is no available room.
@@ -125,7 +124,7 @@ public class BookingManager {
 	
 	public Booking findBookingByBooker(String bookerName) {
 		for(Booking booking:bookingList) {
-			if(booking.getName() == bookerName && (booking.getBookingStatus().equals("Booking")||booking.getBookingStatus().equals("Change"))) {
+			if(booking.getName().equals(bookerName) && (booking.getBookingStatus().equals("Booking")||booking.getBookingStatus().equals("Change"))) {
 				return booking;
 			}
 		}
@@ -134,7 +133,7 @@ public class BookingManager {
 	
 	public Hotel findHotelByName(String hotelName) {
 		for(Hotel hotel:this.hotelList) {
-			if(hotel.getName() == hotelName) {
+			if(hotel.getName().equals(hotelName)) {
 				return hotel;
 			}
 		}
@@ -162,6 +161,7 @@ public class BookingManager {
 	public String allHotelInfo(String hotelName) {
 		Hotel hotel=findHotelByName(hotelName);
 		StringBuilder sb = new StringBuilder();
+		hotel.allRoomInfoWithBooking();
 		sb.append(hotel.allRoomInfoWithBooking());
         String res = new String(sb);
         return res;	
@@ -170,7 +170,8 @@ public class BookingManager {
 	public Calendar convertStartDate(String[] bookingInfo) {
 		int dayN = Integer.parseInt(bookingInfo[3]);
 		int monthN = this.switchMonth(bookingInfo[2]);
-		Calendar startDate = new GregorianCalendar(2018,monthN-1,dayN);
+		//monthN or monthN -1
+		Calendar startDate = new GregorianCalendar(2018,monthN,dayN);
 		return startDate;	
 	}
 	

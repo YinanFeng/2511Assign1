@@ -68,7 +68,7 @@ public class Hotel {
 		for(Room room:typeRoomList) {
 			int isavailable = 1;
 			for(int j=1;j<=duration;j++) {
-				if(room.getCanBook(specDate.MONTH,specDate.DAY_OF_MONTH) == true) {
+				if(room.getCanBook((specDate.get(Calendar.MONTH)+1),specDate.get(Calendar.DAY_OF_MONTH)) == true) {
 				}else {
 					isavailable = 0;
 				}
@@ -100,7 +100,7 @@ public class Hotel {
 		for(Room room:typeRoomList) {
 			int isavailable = 1;
 			for(int j=1;j<=duration;j++) {
-				if(room.getCanBook(specDate.MONTH,specDate.DAY_OF_MONTH) == true) {
+				if(room.getCanBook((specDate.get(Calendar.MONTH)+1),specDate.get(Calendar.DAY_OF_MONTH)) == true) {
 				}else {
 					isavailable = 0;
 				}
@@ -110,14 +110,16 @@ public class Hotel {
 			if(isavailable == 1) {
 				roomBookedList.add(room);
 				for(int j=1;j<=duration;j++) {
-					room.bookTheRoom(specDate.MONTH,specDate.DAY_OF_MONTH);
+					
+					room.bookTheRoom((specDate.get(Calendar.MONTH)+1),specDate.get(Calendar.DAY_OF_MONTH));
 					specDate.add(Calendar.DATE,1);
 				}
 				specDate.add(Calendar.DATE,(-1)*duration);
 				roomList.add(room.getRoomNumber());
 				total++;
+				room.addBookingInfo(specDate,duration);
 			}
-			room.addBookingInfo(specDate,duration);
+			
 			if(total == num) {
 				break;
 			}
@@ -128,8 +130,9 @@ public class Hotel {
 	public void cancelRoom(ArrayList<Integer> roomList,Calendar specDate,int duration) {
 		for(int i=0;i<roomList.size();i++) {
 			Room room = findRoomByNumber(roomList.get(i));
+			room.deleteBookingInfo(specDate,duration);
 			for(int j=1;j<=duration;j++) {
-				room.cancelBooking(specDate.MONTH,specDate.DAY_OF_MONTH);
+				room.cancelBooking((specDate.get(Calendar.MONTH)+1),specDate.get(Calendar.DAY_OF_MONTH));
 				specDate.add(Calendar.DATE,1);
 			}
 			specDate.add(Calendar.DATE,(-1)*duration);
@@ -140,10 +143,11 @@ public class Hotel {
 		for(int i=0;i<roomList.size();i++) {
 			Room room = findRoomByNumber(roomList.get(i));
 			for(int j=1;j<=duration;j++) {
-				room.bookTheRoom(specDate.MONTH,specDate.DAY_OF_MONTH);
+				room.bookTheRoom((specDate.get(Calendar.MONTH)+1),specDate.get(Calendar.DAY_OF_MONTH));
 				specDate.add(Calendar.DATE,1);
 			}
 			specDate.add(Calendar.DATE,(-1)*duration);
+			room.addBookingInfo(specDate,duration);
 		}	
 	}
 	
@@ -169,6 +173,7 @@ public class Hotel {
 	
 	public String allRoomInfoWithBooking(){
 		StringBuilder sb = new StringBuilder();
+		
 		for (Room room:this.allRoomList) {
 			sb.append(this.name).append(" ");
         	sb.append(room.getRoomNumber());
@@ -200,7 +205,7 @@ public class Hotel {
 		ArrayList<Integer> roomNumList = new ArrayList<Integer>();
 		for(Room rm:roomList) {
 			roomNumList.add(rm.getRoomNumber());
-			System.out.println(rm.getTheIndex());
+		
 		}
 		
 		

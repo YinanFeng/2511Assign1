@@ -33,7 +33,16 @@ public class Room {
 	public int getTheIndex() {
 		return theIndex;
 	}
-
+	
+	public void deleteBookingInfo(Calendar startDate,int nor) {
+		for(bookingInfo bi:this.bookingInfoList) {
+			if(bi.getStartdate().equals(startDate) && bi.getNumRoom()==nor) {
+				this.bookingInfoList.remove(bi);
+				break;
+			}
+		}
+	}
+	
 	public ArrayList<bookingInfo> addBookingInfo(Calendar startDate,int duration) {
 		bookingInfo bi= new bookingInfo(startDate,duration);
 		this.bookingInfoList.add(bi);
@@ -64,7 +73,7 @@ public class Room {
 	}
 
 	public void cancelBooking(int Month,int Day) {
-		this.canBook[Month][Day] = false;
+		this.canBook[Month][Day] = true;
 	}
 	
 	public void bookTheRoom(int Month,int Day) {

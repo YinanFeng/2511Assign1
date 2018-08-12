@@ -21,12 +21,8 @@ public class Booking {
 	    this.hotelName = "";
 	    this.roomOrdered = new ArrayList<Integer>();
 	    
-	    
 	    int orderNum = orders.length/2;
-	 //   System.out.println(orders.length);
-	  //  System.out.println(orders[0]);
-	 //   System.out.println(orders[3]);
-	    
+
 	    int index = 0;
 	    for(int i=1;i<=orderNum;i++) {
 	    	int nor = Integer.parseInt(orders[index+1]);

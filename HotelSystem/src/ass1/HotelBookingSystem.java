@@ -26,15 +26,15 @@ public class HotelBookingSystem {
 	        		  infoDetail = bm.addNewBooking(newInfoLine);  
 	        	  }
 	        	  
-	        	  if(newInfoLine[0] == "Cancel") {
+	        	  if(newInfoLine[0].equals("Cancel")) {
 	        		  infoDetail = bm.cancelBooking(newInfoLine);
 	        	  }
 	        	  
-	        	  if(newInfoLine[0] == "Change") {
+	        	  if(newInfoLine[0].equals("Change")) {
 	        		  infoDetail = bm.changeBooking(newInfoLine);		  
 	        	  }
 	        	  
-	        	  if(newInfoLine[0] == "Print") {
+	        	  if(newInfoLine[0].equals("Print")) {
 	        		  infoDetail = bm.allHotelInfo(newInfoLine[1]);
 	        	  }
 	        
