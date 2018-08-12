@@ -171,7 +171,7 @@ public class BookingManager {
 		int dayN = Integer.parseInt(bookingInfo[3]);
 		int monthN = this.switchMonth(bookingInfo[2]);
 		//monthN or monthN -1
-		Calendar startDate = new GregorianCalendar(2018,monthN,dayN);
+		Calendar startDate = new GregorianCalendar(2018,(monthN-1),dayN);
 		return startDate;	
 	}
 	

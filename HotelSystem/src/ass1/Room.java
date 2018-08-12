@@ -85,6 +85,7 @@ public class Room {
 		for(bookingInfo bi:this.bookingInfoList) {
 			Calendar cl = bi.getStartdate();
 			int month = cl.get((Calendar.MONTH));
+			month = month+1;
 			String monthFormat = switchMonth(month);
 			int day = cl.get(Calendar.DAY_OF_MONTH);
 			int nor = bi.getNumRoom();

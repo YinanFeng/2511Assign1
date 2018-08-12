@@ -38,7 +38,7 @@ public class HotelBookingSystem {
 	        		  infoDetail = bm.allHotelInfo(newInfoLine[1]);
 	        	  }
 	        
-	        	  System.out.println(infoDetail);
+	        	  System.out.print(infoDetail);
 	          }
 	          
 	      }

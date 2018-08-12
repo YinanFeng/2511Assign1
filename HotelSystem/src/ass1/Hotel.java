@@ -179,6 +179,7 @@ public class Hotel {
         	sb.append(room.getRoomNumber());
         	sb.append(room.allBookingInfo());
         }
+		sb.append("\n");
 		String res = new String(sb);
         return res;
 	}
