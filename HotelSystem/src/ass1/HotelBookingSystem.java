@@ -16,46 +16,31 @@ public class HotelBookingSystem {
  
 	          while(sc.hasNext()) {
 	        	  String[] newInfoLine = sc.nextLine().split(" ");
-	        	 
+	        	  String infoDetail="";
 	        	  if(newInfoLine[0].equals("Hotel")){
-	        		  bm.addNewRoom(newInfoLine);	  
+	        		  bm.addNewRoom(newInfoLine);
+	        		  continue;
 	        	  }
 	        	  
 	        	  if(newInfoLine[0].equals("Booking")) {
-	        		  Boolean successBooking = bm.addNewBooking(newInfoLine);  
-	        		  if(successBooking == true) {
-	        			  
-	        		  }else{
-	        			  
-	        		  }
-	        		  
-	        		  
+	        		  infoDetail = bm.addNewBooking(newInfoLine);  
 	        	  }
 	        	  
 	        	  if(newInfoLine[0] == "Cancel") {
-	        		  bm.cancelBooking(newInfoLine);
+	        		  infoDetail = bm.cancelBooking(newInfoLine);
 	        	  }
 	        	  
 	        	  if(newInfoLine[0] == "Change") {
-	        		  Boolean successChanging = bm.changeBooking(newInfoLine);
-	        		  if(successChanging == true) {
-	        			  
-	        		  }else {
-	        			  
-	        		  }
-	        		  
+	        		  infoDetail = bm.changeBooking(newInfoLine);		  
 	        	  }
 	        	  
 	        	  if(newInfoLine[0] == "Print") {
-	        		  
+	        		  infoDetail = bm.allHotelInfo(newInfoLine[1]);
 	        	  }
-	        	  
-	        	  
-	        	  
-	        	  
-	        	  
-	        	  
+	        
+	        	  System.out.println(infoDetail);
 	          }
+	          
 	      }
 	      catch (FileNotFoundException e)
 	      {
@@ -65,13 +50,6 @@ public class HotelBookingSystem {
 	      {
 	          if (sc != null) sc.close();
 	      }
-		
-		
-		
-		
-		
-		
-		
 	}
 	
 	

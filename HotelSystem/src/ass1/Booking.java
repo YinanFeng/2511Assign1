@@ -31,12 +31,11 @@ public class Booking {
 	    }
 	}
 
-
 	public String getHotelName() {
 		return hotelName;
 	}
-
-
+	
+   //needed this set??????
 	public void setHotelName(String hotelName) {
 		this.hotelName = hotelName;
 	}
@@ -46,11 +45,9 @@ public class Booking {
 		return roomOrdered;
 	}
 
-
 	public void setRoomOrdered(ArrayList<Integer> roomOrdered) {
 		this.roomOrdered = roomOrdered;
 	}
-
 
 	public String getBookingStatus() {
 		return this.bookingStatus;
@@ -86,20 +83,10 @@ public class Booking {
 		return this.duration;
 	}
 
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-
 	public ArrayList<specRoomOrder> getOrderList() {
 		return this.orderList;
 	}
 
-
-	public void setOrderList(ArrayList<specRoomOrder> orderList) {
-		this.orderList = orderList;
-	}
 	
 	public int totalOrderNumber() {
 		return this.orderList.size();

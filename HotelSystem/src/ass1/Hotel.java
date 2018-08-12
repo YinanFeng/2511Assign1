@@ -9,6 +9,7 @@ public class Hotel {
 	private ArrayList<Room> singleRoomList;
 	private ArrayList<Room> doubleRoomList;
 	private ArrayList<Room> tripleRoomList;
+	private ArrayList<Room> allRoomList;
 	
 	public Hotel(String name) {
 		this.name = name;
@@ -16,24 +17,22 @@ public class Hotel {
 		this.singleRoomList = new ArrayList<Room>();
 		this.doubleRoomList = new ArrayList<Room>();
 		this.tripleRoomList = new ArrayList<Room>();
+		this.allRoomList = new ArrayList<Room>();
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public int getRoomNumber() {
 		return roomNumber;
 	}
-
-	public void setRoomNumber(int roomNumber) {
-		this.roomNumber = roomNumber;
-	}
 	
+	
+	public ArrayList<Room> getAllRoomList() {
+		return allRoomList;
+	}
+
 	public void addNewRoom(String[] roomInfo) {
 		Room newRoom = new Room(roomInfo);
 
@@ -45,7 +44,8 @@ public class Hotel {
 		}
 		if(newRoom.getCapacity() == 3) {
 			this.tripleRoomList.add(newRoom);
-		}	
+		}
+		this.allRoomList.add(newRoom);
 	}
 	
 	public int availableSpecTypeRoom(Calendar specDate,int duration,int type) {
@@ -80,8 +80,9 @@ public class Hotel {
 		return num;
 	}
 	
-	public void bookRoom(ArrayList<Integer> roomList,Calendar specDate,int duration,int type, int num) {
+	public ArrayList<Integer> bookRoom(ArrayList<Integer> roomList,Calendar specDate,int duration,int type, int num) {
 		ArrayList<Room> typeRoomList = null;
+		ArrayList<Integer> roomBookedList = new ArrayList<Integer>();
 		if(type == 1) {
 			typeRoomList = this.singleRoomList;
 		}
@@ -103,6 +104,7 @@ public class Hotel {
 			}
 			specDate.add(Calendar.DATE,(-1)*duration);
 			if(isavailable == 1) {
+				roomBookedList.add(room.getRoomNumber());
 				for(int j=1;j<=duration;j++) {
 					room.bookTheRoom(specDate.MONTH,specDate.DAY_OF_MONTH);
 					specDate.add(Calendar.DATE,1);
@@ -111,10 +113,12 @@ public class Hotel {
 				roomList.add(room.getRoomNumber());
 				total++;
 			}
+			room.addBookingInfo(specDate,duration);
 			if(total == num) {
 				break;
 			}
 		}
+		return roomBookedList;
 	}
 	
 	public void cancelRoom(ArrayList<Integer> roomList,Calendar specDate,int duration) {
@@ -159,5 +163,15 @@ public class Hotel {
 		return null;
 	}
 	
+	public String allRoomInfoWithBooking(){
+		StringBuilder sb = new StringBuilder();
+		for (Room room:this.allRoomList) {
+			sb.append(this.name).append(" ");
+        	sb.append(room.getRoomNumber());
+        	sb.append(room.allBookingInfo());
+        }
+		String res = new String(sb);
+        return res;
+	}
 
 }

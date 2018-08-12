@@ -17,16 +17,8 @@ public class specRoomOrder {
 		return this.roomType;
 	}
 
-	public void setRoomType(int roomType) {
-		this.roomType = roomType;
-	}
-
 	public int getNor() {
 		return this.nor;
-	}
-
-	public void setNor(int nor) {
-		this.nor = nor;
 	}
 	
 }
