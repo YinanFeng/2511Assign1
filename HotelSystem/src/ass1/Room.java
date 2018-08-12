@@ -99,7 +99,7 @@ public class Room {
         return res;
 	}
 	
-	public String switchMonth(int monthS) {
+	private String switchMonth(int monthS) {
 		String monthN = "";
 		switch(monthS) {
 			case 1:

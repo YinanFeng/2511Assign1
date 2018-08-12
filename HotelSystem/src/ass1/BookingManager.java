@@ -140,8 +140,14 @@ public class BookingManager {
 		return null;
 	}
 
+
+	
+	
 	public String changeBooking(String[] changeInfo) {
 		Booking booking = findBookingByBooker(changeInfo[1]);
+		if(booking == null) {
+			return "Change rejected\n";
+		}
 		Hotel hotel = findHotelByName(booking.getHotelName());
 		hotel.cancelRoom(booking.getRoomOrdered(),booking.getStartDate(),booking.getDuration());
 		booking.setBookingStatus("CancelByChange");
@@ -167,7 +173,7 @@ public class BookingManager {
         return res;	
 	}
 	
-	public Calendar convertStartDate(String[] bookingInfo) {
+	private Calendar convertStartDate(String[] bookingInfo) {
 		int dayN = Integer.parseInt(bookingInfo[3]);
 		int monthN = this.switchMonth(bookingInfo[2]);
 		//monthN or monthN -1
@@ -175,7 +181,7 @@ public class BookingManager {
 		return startDate;	
 	}
 	
-	public int switchMonth(String monthS) {
+	private int switchMonth(String monthS) {
 		int monthN = 0;
 		switch(monthS) {
 			case "Jan":

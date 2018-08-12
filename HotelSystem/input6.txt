@@ -1,0 +1,56 @@
+Hotel Surfers 101 3
+Hotel Surfers 102 2 
+Hotel Surfers 103 1
+Hotel Surfers 201 2
+Hotel Surfers 202 2 
+Hotel Surfers 203 1
+Hotel UNSW 101 2
+Hotel UNSW 102 3
+Hotel UNSW 103 1
+Hotel UNSW 104 1
+Hotel USYD 101 2
+Hotel USYD 102 1
+Hotel USYD 103 1
+Hotel USYD 201 2
+Hotel USYD 202 3
+Hotel USYD 203 3
+Booking Stephanie Jan 26 1 double 2
+Booking Aarthi Jan 25 6 single 2
+Change Aarthi Jan 27 3 triple 2
+Booking Gary Jan 25 2 single 1
+Booking Jarshank Jan 28 1 double 2
+Booking Bennet Jan 24 4 double 2
+Booking Zhang Jan 3 5 double 1
+Booking Zheng Jan 1 1 double 2
+Booking Wang Jan 25 4 single 1
+Booking Yan Jan 25 10 triple 1
+Cancel Yan
+Booking Yan Jan 22 4 single 2 triple 2 double 2
+Booking Yan Jan 20 4 single 2 triple 2 double 2
+Print USYD
+Booking Yan Jan 18 2 single 2 triple 2 double 2
+Booking Yan Jan 3 3 single 1
+Change Yan Jan 18 1 single 2 triple 2 double 2
+Booking Yan Jan 20 2 double 2
+Print USYD
+Print Surfers
+Booking Tang Jan 26 3 single 2
+Booking Liu Jan 25 4 single 1
+Change Jarshank Jan 25 2 single 1
+Booking Li Jan 2 4 single 2
+Booking Thomas Feb 1 2 single 1 double 2
+Cancel Stephanie
+Cancel Zhang
+Booking Stephanie Jan 26 1 double 1
+Booking Zhang Jan 26 3 double 1
+Booking PGONE Jan 26 3 triple 1
+Booking LiXiaoLu Jan 21 10 double 1
+Booking JiaNaiLiang Jan 11 9 single 1
+Booking MaRong Feb 12 5 single 2 double 3 triple 1
+Booking SongZhe Jan 11 2 single 2
+Booking KrisWu Jan 14 4 double 1 triple 1
+Print USYD
+Print UNSW
+Print Surfers
+Cancel Zheng
+Booking Hussein Jan 26 1 single 1
