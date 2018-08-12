@@ -84,7 +84,7 @@ public class Room {
 		StringBuilder sb = new StringBuilder();
 		for(bookingInfo bi:this.bookingInfoList) {
 			Calendar cl = bi.getStartdate();
-			int month = cl.get(Calendar.MONTH);
+			int month = cl.get((Calendar.MONTH));
 			String monthFormat = switchMonth(month);
 			int day = cl.get(Calendar.DAY_OF_MONTH);
 			int nor = bi.getNumRoom();
@@ -101,29 +101,29 @@ public class Room {
 	public String switchMonth(int monthS) {
 		String monthN = "";
 		switch(monthS) {
-			case 0:
-				monthN = "Jan";break;
 			case 1:
-				monthN = "Feb";break;
+				monthN = "Jan";break;
 			case 2:
-				monthN = "Mar";break;
+				monthN = "Feb";break;
 			case 3:
-				monthN = "Apr";break;
+				monthN = "Mar";break;
 			case 4:
-				monthN = "May";break;
+				monthN = "Apr";break;
 			case 5:
-				monthN = "Jun";break;
+				monthN = "May";break;
 			case 6:
-				monthN = "Jul";break;
+				monthN = "Jun";break;
 			case 7:
-				monthN = "Aug";break;
+				monthN = "Jul";break;
 			case 8:
-				monthN = "Sep";break;
+				monthN = "Aug";break;
 			case 9:
-				monthN = "Oct";break;
+				monthN = "Sep";break;
 			case 10:
-				monthN = "Nov";break;
+				monthN = "Oct";break;
 			case 11:
+				monthN = "Nov";break;
+			case 12:
 				monthN = "Dec";break;
 		}
 		return monthN;
