@@ -35,7 +35,7 @@ public class Booking {
 	    }
 	}
 
-	public int whichRoomType(String type) {
+	private int whichRoomType(String type) {
 		if(type.equals("single")) {
 			return 1;
 		}
@@ -47,13 +47,12 @@ public class Booking {
 		return 3;
 	}
 	
-	
-	
+
 	public String getHotelName() {
 		return hotelName;
 	}
 	
-   //needed this set??????
+
 	public void setHotelName(String hotelName) {
 		this.hotelName = hotelName;
 	}
@@ -63,9 +62,6 @@ public class Booking {
 		return roomOrdered;
 	}
 
-	public void setRoomOrdered(ArrayList<Integer> roomOrdered) {
-		this.roomOrdered = roomOrdered;
-	}
 
 	public String getBookingStatus() {
 		return this.bookingStatus;
@@ -92,11 +88,6 @@ public class Booking {
 	}
 
 
-	public void setStartDate(Calendar startDate) {
-		this.startDate = startDate;
-	}
-
-
 	public int getDuration() {
 		return this.duration;
 	}
@@ -105,6 +96,9 @@ public class Booking {
 		return this.orderList;
 	}
 
+	public void setRoomOrdered(ArrayList<Integer> roomOrdered) {
+		this.roomOrdered = roomOrdered;
+	}
 	
 	public int totalOrderNumber() {
 		return this.orderList.size();

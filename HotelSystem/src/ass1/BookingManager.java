@@ -92,18 +92,7 @@ public class BookingManager {
 		}
 		return availableHotel;	
 	}
-	/*
-	public ArrayList<Integer> bookAllRoom(Hotel hotel,Booking booking) {
-		ArrayList<Integer> roomList = new ArrayList<Integer>();
-		for(int i=0;i<booking.totalOrderNumber();i++) {	
-			int roomType = booking.getOrderList().get(i).getRoomType();
-			int numRequired = booking.getOrderList().get(i).getNor();
-			//right way to use add all???
-			roomList.addAll(hotel.bookRoom(booking.getRoomOrdered(),booking.getStartDate(),booking.getDuration(),roomType,numRequired));
-		}
-		return roomList;
-	}
-	*/
+
 	public String cancelBooking(String[] cancelInfo) {
 		Booking booking= findBookingByBooker(cancelInfo[1]);
 		if(booking == null) {
