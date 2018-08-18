@@ -1,0 +1,20 @@
+Hotel HYATT 101 3
+Hotel JW 101 3
+Hotel JW 102 3
+Hotel JW 103 3
+Hotel JW 104 3
+Hotel JW 105 3
+Hotel JW 106 3
+Hotel JW 107 3
+Booking Ivy Dec 10 20 triple 2
+Booking Coco Dec 15 10 double 1
+Change Ivy Dec 15 10 triple 1
+Change Coco Dec 15 10 triple 1
+Cancel Ivy
+Cancel Coco
+Change Ivy Dec 15 10 triple 1
+Cancel Ivy
+Booking Ivy Nov 10 20 triple 8
+Booking Coco Nov 10 20 triple 1
+Booking Ivy Nov 10 20 triple 7
+Booking F Nov 10 20 triple 7

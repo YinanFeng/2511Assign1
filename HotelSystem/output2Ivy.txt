@@ -1,0 +1,49 @@
+Booking rejected
+Change rejected
+Cancel rejected
+Cancel rejected
+Change rejected
+Booking Ivy JW 102 105
+Booking rejected
+Cancel Ivy
+Booking Coco JW 102
+Booking rejected
+Booking Ivy JW 101 102 103 104 106
+JW 101 Jan 15 10
+JW 102 Jan 15 10 Dec 15 10
+JW 103 Jan 15 10
+JW 104 Jan 15 10
+JW 105
+JW 106 Jan 15 10
+Cancel Ivy
+Cancel Coco
+JW 101
+JW 102
+JW 103
+JW 104
+JW 105
+JW 106
+Booking Coco HYATT 101 102 104
+Change rejected
+HYATT 101 Dec 15 10
+HYATT 102 Dec 15 10
+HYATT 103
+HYATT 104 Dec 15 10
+HYATT 105
+HYATT 106
+Booking a JW 103
+Booking b JW 103
+Booking c JW 103
+Booking rejected
+JW 101
+JW 102
+JW 103 Jan 25 10 Feb 25 10 Nov 25 10
+JW 104
+JW 105
+JW 106
+HYATT 101 Dec 15 10
+HYATT 102 Dec 15 10
+HYATT 103
+HYATT 104 Dec 15 10
+HYATT 105
+HYATT 106

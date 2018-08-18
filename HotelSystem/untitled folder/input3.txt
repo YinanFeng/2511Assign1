@@ -1,0 +1,43 @@
+Hotel Surfers 101 1
+Hotel Surfers 102 2
+Hotel Surfers 103 3
+Hotel Burleigh 101 1
+Hotel Burleigh 102 2
+Hotel Burleigh 103 2
+Hotel Burleigh 104 3
+Booking Aarthi Jan 27 3 single 1
+Print Surfers
+Print Burleigh
+Booking Gary Jan 29 2 single 1
+Print Surfers
+Print Burleigh
+Booking Hussein Jan 26 3 single 1 double 2
+Print Surfers
+Print Burleigh
+Change Aarthi Jan 29 5 single 1 double 2 triple 1
+Print Surfers
+Print Burleigh
+Change Gary Jan 30 2 single 1
+Print Surfers
+Print Burleigh
+Change Aarthi Jan 29 5 single 1 double 2 triple 1
+Print Surfers
+Print Burleigh
+Booking Yefeng Feb 2 4 single 1 double 2
+Print Surfers
+Print Burleigh
+Booking Niu Feb 3 4 single 1 double 2
+Print Surfers
+Print Burleigh
+Change Niu Jan 1 4 single 1 double 1
+Print Surfers
+Print Burleigh
+Change Niu Jan 4 4 single 1 double 1
+Print Surfers
+Print Burleigh
+Change Niu Jan 26 4 single 1 double 1
+Print Surfers
+Print Burleigh
+Change Niu Jan 27 4 single 1 double 1
+Print Surfers
+Print Burleigh

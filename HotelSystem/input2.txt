@@ -1,51 +1,67 @@
-Hotel Surfers 101 1
-Hotel Surfers 102 1
-Hotel Surfers 103 1
-Hotel Surfers 201 2
-Hotel Surfers 202 2
-Hotel Surfers 203 2
-Hotel Surfers 301 3
-Hotel Surfers 302 3
-Hotel Surfers 303 3
-Hotel Burleigh 101 1
-Hotel Burleigh 102 1
-Hotel Burleigh 201 2
-Hotel Burleigh 202 2
-Hotel Burleigh 301 3
-Hotel Burleigh 302 3
-Booking Aarthi Mar 3 10 single 2
-Print Surfers
-Print Burleigh
-Booking Bean Mar 13 2 single 3
-Print Surfers
-Print Burleigh
-Booking Cindy Mar 8 5 single 2
-Print Surfers
-Print Burleigh
-Booking David Mar 13 1 single 2 double 2
-Print Surfers
-Print Burleigh
-Booking Ember Mar 14 3 single 2 double 2
-Print Surfers
-Print Burleigh
-Booking Fred Mar 5 3 double 2 triple 2
-Print Surfers
-Print Burleigh
-Change Fred Mar 5 3 double 2 triple 2 single 1
-Print Surfers
-Print Burleigh
-Booking George Mar 3 2 single 1 double 2 triple 2
-Print Surfers
-Print Burleigh
-Cancel Aarthi
-Print Surfers
-Print Burleigh
-Booking Helen Mar 3 5 single 1 double 1 triple 1
-Print Surfers
-Print Burleigh
-Booking Ivan Mar 3 5 single 1 double 1 triple 1
-Print Surfers
-Print Burleigh
-Booking Jack Mar 3 5 single 1 double 1 triple 1
-Print Surfers
-Print Burleigh
+# input2.txt is using to test cancel and change Booking
+Hotel A 101 2
+Hotel A 102 2
+Hotel A 103 3
+Hotel B 101 3
+Hotel B 104 2
+Hotel B 105 1
+Hotel C 101 2
+Hotel C 102 3
+Hotel C 103 2
+Booking a Jan 1 31 double 2 triple 1
+	#output Booking a A 101 102 103
+Print A
+Change a Jan 1 1 double 2 triple 1
+	#output Booking a A 101 102 103	
+Print A
+Change a Jan 1 31 double 2 triple 1
+	#output Booking a A 101 102 103 
+Print A
+Change a Jan 1 31 single 1 double 1 triple 1
+	# output Change a B 101 104 105
+Print A
+Print B
+Booking b Jan 1 31 double 2 triple 1
+	#output Booking b A 101 102 103
+Print A
+Change b Jan 1 1 single 1 double 1 triple 1
+	#output Change rejected
+Print A
+Print B
+Change b Jan 1 1 double 2 triple 1
+	#Output Change b A 101 102 103
+Change b Feb 1 31 double 2 triple 1
+	Output Change b A 101 102 103
+Change a Jan 1 31 double 2 triple 1
+	#output a A 101 102 103
+Change b Jan 1 1 double 2 triple 1
+	#output Change b C 101 102 103
+Cancel b
+	#output Cancel b
+Booking b Jan 1 31 single 1 double 1 triple 1
+	#output Booking b B 101 104 105
+Cancel a
+	#output Cancel a
+Cancel b
+	#output Cancel b
+Cancel c
+	#output Cancel rejected
+Print A
+Print B
+Print C
+Booking a Jan 1 31 double 2 triple 1
+	#output a A 101 102 103
+Booking c Jan 1 31 double 2 triple 1
+	#output c C 101 102 103
+Booking b Jan 31 1 double 2 triple 1
+	#output Booking rejected
+Change b Jan 31 1 single 1 double 1 triple 1
+	#output Change rejected
+Booking b Feb 1 31 double 2 triple 1
+	#output b A 101 102 103
+Print A
+Change b Jan 1 31 single 1 double 1 triple 1
+	#output Change b B 101 104 105
+Print A
+Print B
+Print C	

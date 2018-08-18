@@ -1,0 +1,66 @@
+Booking a A 101 102 103
+A 101 Jan 1 31
+A 102 Jan 1 31
+A 103 Jan 1 31
+Change a A 101 102 103
+A 101 Jan 1 1
+A 102 Jan 1 1
+A 103 Jan 1 1
+Change a A 101 102 103
+A 101 Jan 1 31
+A 102 Jan 1 31
+A 103 Jan 1 31
+Change a B 101 104 105
+A 101
+A 102
+A 103
+B 101 Jan 1 31
+B 104 Jan 1 31
+B 105 Jan 1 31
+Booking b A 101 102 103
+A 101 Jan 1 31
+A 102 Jan 1 31
+A 103 Jan 1 31
+Change rejected
+A 101 Jan 1 31
+A 102 Jan 1 31
+A 103 Jan 1 31
+B 101 Jan 1 31
+B 104 Jan 1 31
+B 105 Jan 1 31
+Change b A 101 102 103
+Change b A 101 102 103
+Change a A 101 102 103
+Change b C 101 102 103
+Cancel b
+Booking b B 101 104 105
+Cancel a
+Cancel b
+Cancel rejected
+A 101
+A 102
+A 103
+B 101
+B 104
+B 105
+C 101
+C 102
+C 103
+Booking a A 101 102 103
+Booking c C 101 102 103
+Booking rejected
+Change rejected
+Booking b A 101 102 103
+A 101 Jan 1 31 Feb 1 31
+A 102 Jan 1 31 Feb 1 31
+A 103 Jan 1 31 Feb 1 31
+Change b B 101 104 105
+A 101 Jan 1 31
+A 102 Jan 1 31
+A 103 Jan 1 31
+B 101 Jan 1 31
+B 104 Jan 1 31
+B 105 Jan 1 31
+C 101 Jan 1 31
+C 102 Jan 1 31
+C 103 Jan 1 31

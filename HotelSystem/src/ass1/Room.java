@@ -12,9 +12,9 @@ public class Room {
 	private boolean[][] canBook;
 	private ArrayList<bookingInfo> bookingInfoList;
 	
-	private static int countRoom = 1;
 	private int theIndex;
-
+	private static int countRoom = 1;
+	
 	public Room(String[] roomInfo) {
 		this.hotelName = roomInfo[1];
 		this.roomNumber = Integer.parseInt(roomInfo[2]);

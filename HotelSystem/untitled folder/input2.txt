@@ -1,0 +1,51 @@
+Hotel Surfers 101 1
+Hotel Surfers 102 1
+Hotel Surfers 103 1
+Hotel Surfers 201 2
+Hotel Surfers 202 2
+Hotel Surfers 203 2
+Hotel Surfers 301 3
+Hotel Surfers 302 3
+Hotel Surfers 303 3
+Hotel Burleigh 101 1
+Hotel Burleigh 102 1
+Hotel Burleigh 201 2
+Hotel Burleigh 202 2
+Hotel Burleigh 301 3
+Hotel Burleigh 302 3
+Booking Aarthi Mar 3 10 single 2
+Print Surfers
+Print Burleigh
+Booking Bean Mar 13 2 single 3
+Print Surfers
+Print Burleigh
+Booking Cindy Mar 8 5 single 2
+Print Surfers
+Print Burleigh
+Booking David Mar 13 1 single 2 double 2
+Print Surfers
+Print Burleigh
+Booking Ember Mar 14 3 single 2 double 2
+Print Surfers
+Print Burleigh
+Booking Fred Mar 5 3 double 2 triple 2
+Print Surfers
+Print Burleigh
+Change Fred Mar 5 3 double 2 triple 2 single 1
+Print Surfers
+Print Burleigh
+Booking George Mar 3 2 single 1 double 2 triple 2
+Print Surfers
+Print Burleigh
+Cancel Aarthi
+Print Surfers
+Print Burleigh
+Booking Helen Mar 3 5 single 1 double 1 triple 1
+Print Surfers
+Print Burleigh
+Booking Ivan Mar 3 5 single 1 double 1 triple 1
+Print Surfers
+Print Burleigh
+Booking Jack Mar 3 5 single 1 double 1 triple 1
+Print Surfers
+Print Burleigh

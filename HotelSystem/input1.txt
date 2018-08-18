@@ -1,24 +1,63 @@
-Hotel Surfers 101 1
-Hotel Surfers 102 2
-Hotel Surfers 103 3
-Hotel Burleigh 101 1
-Change Gary Jan 26 3 single 1 double 2
-Change Gary Jan 30 3 single 1 double 2
-Cancel Gary
-Booking Gary Jan 30 3 single 1 double 2
-Cancel Gary
-Booking Gary Jan 1 365 single 1 double 1 triple 1
-Booking Harry Dec 31 1 single 1 double 1 triple 1
-Booking Sam Jan 1 365 single 1
-Change Sam Jan 1 65 single 1
-Change Gary Jan 1 330 single 1 double 1 triple 1
-Booking Henry Dec 1 1 single 1 double 1
-Change Henry Nov 1 1 single 1 double 1
-Print Surfers
-Print Burleigh
-Cancel Henry
-Cancel Sam
-Cancel Gary
-Cancel Harry
-Print Surfers
-Print Burleigh
+# input2.txt is using to test make a booking
+Hotel A 101 2
+Hotel A 102 2
+Hotel A 103 3
+Hotel B 101 3
+Hotel B 104 2
+Hotel B 105 1
+Hotel C 101 2
+Hotel C 102 3
+Hotel C 103 2
+Booking a Jan 1 22 single 1 double 1 triple 1
+	# output Booking a B 101 104 105
+Booking b Jan 11 3 single 1 double 1 triple 1
+	# output Booking rejected
+Booking c Feb 1 22 single 1 double 1 triple 1
+	# output Booking c B 101 104 105	
+Booking d Feb 1 22 single 2
+	# output Booking rejected
+Booking f Mar 1 22 double 2 
+	#output Booking f A 101 102
+Booking g Mar 1 22 double 2
+	#output Booking g C 101 103
+Booking h Jan 1 22 triple 1
+	# output Booking h A 103
+Booking j Jan 11 3 triple 1
+	# output Booking j C 102 
+Booking i Jan 12 3 triple 1
+	#output Booking rejected
+Booking k Dec 1 2 double 1
+	#output Booking k A 102 
+Booking l Dec 31 2 double 1
+	#output Booking rejected
+Booking m Dec 31 1 double 1
+	#output Booking m A 102 
+Booking n Dec 31 1 double 1
+	#output Booking n A 102
+Booking o Dec 29 3 double 2 
+	# output Booking o C 101 102
+Booking p Mar 22 1 double 1 
+	#output Booking p B 104 
+Booking q Mar 22 1 double 2
+	#output Booking rejected
+Booking r Jan 12 3 double 2 triple 1
+	# output Booking rejected
+Booking s Jan 14 3 double 2 triple 1
+	# output Booking r C 101 102 103
+Booking t May 25 5 double 2 triple 2
+	# output Booking rejected
+Booking u Jan 23 10 single 1 double 1 triple 1
+	#output Booking rejected
+Booking v Jan 23 9 single 1 double 1 triple 1
+	# output Booking v B 101 104 105
+Booking w Jan 01 15 double 2 triple 1
+	# output booking rejected
+Booking x Jan 01 10 double 2 triple 1
+	#output Booking x C 101 102 103
+Booking y Mar 23 20 double 2 triple 1
+	#output A 101 102 103
+Booking z Apr 12 3 double 2
+	#output Booking z A 101 102
+Print A
+Print B
+Print C

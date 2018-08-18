@@ -104,5 +104,12 @@ public class Booking {
 		return this.orderList.size();
 	}
 	
+	public int getSpecOrderNor(int i) {
+		specRoomOrder order = this.orderList.get(i);
+		return order.getNor();
+		
+	}
+	
+	
 	
 }
