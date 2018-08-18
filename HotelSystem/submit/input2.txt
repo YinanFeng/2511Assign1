@@ -1,0 +1,48 @@
+Booking Ivy Dec 10 1 double 1
+   #Ivy’s booking request is for 1 double starting on Dec 10 for 1 nights
+   #No enough room, Booking rejected
+Change Ivy Nov 27 2 single 2
+   #Change Ivy’s booking to single 2, Ivy have not booked before,so Change rejected
+Cancel Ivy
+   #Cancel Ivy’s booking, Ivy have not booked before,so Cancel rejected
+Hotel JW 101 3
+   #Hotel JW has room 101 with capacity 3
+Hotel JW 102 2
+   #Hotel JW has room 102 with capacity 2
+Hotel JW 103 1
+   #Hotel JW has room 103 with capacity 1
+Hotel JW 104 1
+   #Hotel JW has room 104 with capacity 1
+Hotel JW 105 2
+   #Hotel JW has room 105 with capacity 2
+Hotel JW 106 3
+   #Hotel JW has room 106 with capacity 3
+Cancel Ivy
+   #Cancel Ivy’s booking, Ivy have not booked before,so Cancel rejected
+Change Ivy Nov 27 2 triple 2
+   #Change Ivy’s booking to triple 2, Ivy have not booked before,so Change rejected
+Booking Ivy Dec 10 10 double 2
+   #Ivy’s booking request is for 2 double starting on Dec 10 for 10 nights
+   #Booking Ivy JW 102 105
+Booking Coco Dec 15 10 double 1
+   #Coco’s booking request is for 1 double starting on Dec 15 for 10 nights
+   #No enough room, Booking rejected
+Cancel Ivy
+   #Cancel Ivy’s booking, output: Cancel Ivy
+Booking Coco Dec 15 10 double 1
+   #Coco’s booking request is for 1 double starting on Dec 15 for 10 nights
+   #Booking Coco JW 102
+Booking Ivy Jan 15 10 double 1 single 3
+   #Ivy’s booking request is for 1 double 3 single starting on Dec 10 for 10 nights
+   #No enough room, Booking rejected
+Booking Ivy Jan 15 10 double 1 single 2 triple 2
+   #Ivy’s booking request is for 1 double 2 single 2 triple starting on Dec 10 for 10 nights
+   #Booking Ivy JW 101 102 103 104 106
+Print JW
+   # Print out occupancy of all rooms at Hotel JW, in order of room declarations, then date
+Cancel Ivy
+   #Cancel Ivy’s booking, output: Cancel Ivy
+Cancel Coco
+   #Cancel Coco’s booking, output: Cancel Coco
+Print JW
+   # Print out occupancy of all rooms at Hotel JW, in order of room declarations, then date

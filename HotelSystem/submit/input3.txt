@@ -1,0 +1,47 @@
+Hotel HYATT 101 3
+   #Hotel HYATT has room 101 with capacity 3
+Hotel JW 101 3
+   #Hotel JW has room 101 with capacity 3
+Hotel JW 102 3
+   #Hotel JW has room 102 with capacity 3
+Hotel JW 103 3
+   #Hotel JW has room 103 with capacity 3
+Hotel JW 104 3
+   #Hotel JW has room 104 with capacity 3
+Hotel JW 105 3
+   #Hotel JW has room 105 with capacity 3
+Hotel JW 106 3
+   #Hotel JW has room 106 with capacity 3
+Hotel JW 107 3
+   #Hotel JW has room 107 with capacity 3
+Booking Ivy Dec 10 20 triple 2
+   #Ivy’s booking request is for 2 triple room starting on Dec 10 for 20 nights
+   #Booking Ivy JW 101 102
+Booking Coco Dec 15 10 double 1
+   #Coco’s booking request is for 1 double room starting on Dec 15 for 10 nights 
+   #No enough room, Booking rejected 
+Change Ivy Dec 15 10 triple 1
+   #Change Ivy’s booking to triple 1
+   #Change Ivy HYATT 101
+Change Coco Dec 15 10 triple 1
+   #Change Coco’s booking to triple 1, Coco have not booked before,so Change rejected
+Cancel Ivy
+   #Cancel Ivy’s booking, output: Cancel Ivy
+Cancel Coco
+   #Cancel Coco’s booking, Coco have not booked before,so Cancel rejected
+Change Ivy Dec 15 10 triple 1
+   #Change Ivy’s booking to triple 1, Ivy have not booked before,so Change rejected
+Cancel Ivy
+   #Cancel Ivy’s booking, Ivy have not booked before,so Cancel rejected
+Booking Ivy Nov 10 20 triple 8
+   #Ivy’s booking request is for 8 triple starting on Nov 10 for 20 nights
+   #No enough room, Booking rejected
+Booking Coco Nov 10 20 triple 1
+   #Coco’s booking request is for 1 triple starting on Nov 10 for 20 nights
+   #Booking Coco HYATT 101
+Booking Ivy Nov 10 20 triple 7
+   #Ivy’s booking request is for 7 triple starting on Nov 10 for 20 nights
+   #Booking Ivy JW 101 102 103 104 105 106 107
+Booking F Nov 10 20 triple 7
+   #F’s booking request is for 7 triple starting on Nov 10 for 20 nights
+   #No enough room, Booking rejected
