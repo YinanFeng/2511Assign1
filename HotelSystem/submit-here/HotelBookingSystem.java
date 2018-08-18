@@ -106,7 +106,7 @@ public class HotelBookingSystem {
     //process the booking request
     //return "Booking rejected\n" if the booking is not successful
     //return the string contains the detail of booking if it is success
-    private String addNewBooking(String[] bookingInfo) {
+    public String addNewBooking(String[] bookingInfo) {
         Calendar startDate = this.convertStartDate(bookingInfo);
         int duration = Integer.parseInt(bookingInfo[4]);
         String[] orders = Arrays.copyOfRange(bookingInfo, 5, bookingInfo.length);
@@ -145,7 +145,7 @@ public class HotelBookingSystem {
     //check if there is a hotel available for the booking
     //if so, return the hotel instance
     //if not return null(hotel=null)
-    private Hotel checkRoomAvailable(Booking newBooking) {
+    public Hotel checkRoomAvailable(Booking newBooking) {
         Hotel availableHotel = null;
         //loop the hotel list
         for(Hotel hotel:this.hotelList) {
@@ -174,7 +174,7 @@ public class HotelBookingSystem {
     //process the cancel request
     // return "Cancel rejected\n" if the cancel is not successful
     //return the string contains the customer of cancel if it is success
-    private String cancelBooking(String[] cancelInfo) {
+    public String cancelBooking(String[] cancelInfo) {
         Booking booking= findBookingByBooker(cancelInfo[1]);
         //if the customer have no booking recorded
         if(booking == null) {
@@ -214,7 +214,7 @@ public class HotelBookingSystem {
      */
     //loop the list
     //getting the hotel instance by giving the name of hotel
-    private Hotel findHotelByName(String hotelName) {
+    public Hotel findHotelByName(String hotelName) {
         for(Hotel hotel:this.hotelList) {
             if(hotel.getName().equals(hotelName)) {
                 return hotel;
@@ -231,7 +231,7 @@ public class HotelBookingSystem {
     //process the change request
     //return "Change rejected\n" if the change is not successful
     //return the string contains the change details if it is success
-    private String changeBooking(String[] changeInfo) {
+    public String changeBooking(String[] changeInfo) {
         Booking booking = findBookingByBooker(changeInfo[1]);
         //if the customer has no booking record, the change should be rejected
         if(booking == null) {
